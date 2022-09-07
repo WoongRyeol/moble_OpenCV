@@ -2,6 +2,8 @@
 import numpy as np
 import cv2
 
+imageFile = './data/lena.jpg'
+img  = cv2.imread(imageFile) 
 def onMouse(event, x, y, flags, param):
 ##    global img
     if event == cv2.EVENT_LBUTTONDOWN:
@@ -16,7 +18,8 @@ def onMouse(event, x, y, flags, param):
     cv2.imshow("img", param[0])
     
 img = np.zeros((512,512,3), np.uint8) + 255
-cv2.imshow('img', img)
+cv2.imshow('Lena color',img)
+#cv2.imshow('img', img)
 cv2.setMouseCallback('img', onMouse, [img])
 cv2.waitKey()
 cv2.destroyAllWindows()
